@@ -4,6 +4,6 @@ public class Espresso {
     }
 
     public String getDescription(){
-        return "";
+        return "Espresso";
     }
 }

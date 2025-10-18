@@ -4,6 +4,6 @@ public class DarkRoast extends Beverage {
     }
 
     public String getDescription(){
-        return "";
+        return "Dark roast";
     }
 }

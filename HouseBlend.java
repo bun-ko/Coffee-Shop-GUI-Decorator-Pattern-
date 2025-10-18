@@ -4,6 +4,6 @@ public class HouseBlend {
     }
 
     public String getDescription(){
-        return "";
+        return "House blend";
     }
 }

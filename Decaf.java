@@ -4,6 +4,6 @@ public class Decaf {
     }
 
     public String getDescription(){
-        return "";
+        return "Decaf";
     }
 }
