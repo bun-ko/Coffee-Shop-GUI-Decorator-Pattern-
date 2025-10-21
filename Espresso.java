@@ -1,4 +1,4 @@
-public class Espresso {
+public class Espresso extends Beverage{
     public double getCost(){
         return 0.0;
     }
