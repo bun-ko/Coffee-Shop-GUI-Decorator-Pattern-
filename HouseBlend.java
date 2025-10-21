@@ -1,9 +1,17 @@
 public class HouseBlend extends Beverage{
+    public HouseBlend(){
+        this.cost = 1.00;
+    }
+
     public double getCost(){
-        return 0.0;
+        return this.cost;
     }
 
     public String getDescription(){
         return "House blend";
+    }
+
+    public double getTotal(){
+        return totalCost;
     }
 }

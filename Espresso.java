@@ -1,9 +1,17 @@
 public class Espresso extends Beverage{
+    public Espresso(){
+        this.cost = 1.00;
+    }
+
     public double getCost(){
-        return 0.0;
+        return this.cost;
     }
 
     public String getDescription(){
         return "Espresso";
+    }
+
+    public double getTotal(){
+        return totalCost;
     }
 }
