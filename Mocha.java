@@ -3,13 +3,15 @@ public class Mocha extends CondimentDecorator{
 
     public Mocha(Beverage beverage){
         this.beverage = beverage;
+        this.beverage.cost += 1.00;
+        this.beverage.description += " with Mocha";
     }
 
     public double getCost(){
-        return beverage.getCost() + 1.50;
+        return 1.00;
     }
 
     public String getDescription(){
-        return this.beverage.getDescription() + " with Mocha";
+        return "Mocha condiment decorator";
     }
 }

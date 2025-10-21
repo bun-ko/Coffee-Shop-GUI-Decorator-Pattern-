@@ -3,13 +3,15 @@ public class Soy extends CondimentDecorator{
 
     public Soy(Beverage beverage){
         this.beverage = beverage;
+        this.beverage.cost += 1.50;
+        this.beverage.description += " with Soy";
     }
 
     public double getCost(){
-        return beverage.getCost() + 1.00;
+        return 1.50;
     }
 
     public String getDescription(){
-        return this.beverage.getDescription() + " with Soy";
+        return "Soy condiment decorator";
     }
 }

@@ -1,6 +1,7 @@
 public class Decaf extends Beverage{
     public Decaf(){
         this.cost = 1.25;
+        this.description = "Decaf";
     }
 
     public double getCost(){
@@ -8,10 +9,6 @@ public class Decaf extends Beverage{
     }
 
     public String getDescription(){
-        return "Decaf";
-    }
-
-    public double getTotal(){
-        return totalCost;
+        return this.description;
     }
 }

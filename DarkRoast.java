@@ -1,6 +1,7 @@
 public class DarkRoast extends Beverage {
     public DarkRoast(){
-        this.cost = 1.25;
+        this.cost = 1.50;
+        this.description = "Dark roast";
     }
 
     public double getCost(){
@@ -8,10 +9,6 @@ public class DarkRoast extends Beverage {
     }
 
     public String getDescription(){
-        return "Dark Roast";
-    }
-
-    public double getTotal(){
-        return totalCost;
+        return this.description;
     }
 }

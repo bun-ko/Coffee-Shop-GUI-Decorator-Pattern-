@@ -1,6 +1,7 @@
 public class HouseBlend extends Beverage{
     public HouseBlend(){
         this.cost = 1.00;
+        this.description = "House blend";
     }
 
     public double getCost(){
@@ -8,10 +9,6 @@ public class HouseBlend extends Beverage{
     }
 
     public String getDescription(){
-        return "House blend";
-    }
-
-    public double getTotal(){
-        return totalCost;
+        return this.description;
     }
 }

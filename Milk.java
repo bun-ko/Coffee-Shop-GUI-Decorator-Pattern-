@@ -3,13 +3,15 @@ public class Milk extends CondimentDecorator{
 
     public Milk(Beverage beverage){
         this.beverage = beverage;
+        this.beverage.cost += .50;
+        this.beverage.description += " with Milk";
     }
 
     public double getCost(){
-        return beverage.getCost() + .50;
+        return .50;
     }
 
     public String getDescription(){
-        return this.beverage.getDescription() + " with Milk";
+        return "Milk condiment decorator";
     }
 }

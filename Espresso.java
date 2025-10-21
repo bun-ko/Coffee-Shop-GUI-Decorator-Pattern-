@@ -1,6 +1,7 @@
 public class Espresso extends Beverage{
     public Espresso(){
         this.cost = 1.50;
+        this.description = "Espresso";
     }
 
     public double getCost(){
@@ -8,10 +9,6 @@ public class Espresso extends Beverage{
     }
 
     public String getDescription(){
-        return "Espresso";
-    }
-
-    public double getTotal(){
-        return totalCost;
+        return this.description;
     }
 }
