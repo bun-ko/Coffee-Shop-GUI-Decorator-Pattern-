@@ -3,5 +3,5 @@ public abstract class Beverage {
     protected double totalCost;
     abstract String getDescription();
     abstract double getCost();
-    abstract double getTotal();
+    //abstract double getTotal();
 }

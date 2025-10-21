@@ -1,6 +1,6 @@
 public class Decaf extends Beverage{
     public Decaf(){
-        this.cost = 1.00;
+        this.cost = 1.25;
     }
 
     public double getCost(){

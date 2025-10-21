@@ -1,6 +1,6 @@
 public class Espresso extends Beverage{
     public Espresso(){
-        this.cost = 1.00;
+        this.cost = 1.50;
     }
 
     public double getCost(){

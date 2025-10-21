@@ -1,8 +1,12 @@
 public class Whip extends CondimentDecorator{
     Beverage beverage;
 
+    public Whip(Beverage beverage){
+        this.beverage = beverage;
+    }
+
     public double getCost(){
-        return this.beverage.getCost() + .99; //whatever price this is
+        return beverage.getCost() + 1.50;
     }
 
     public String getDescription(){
