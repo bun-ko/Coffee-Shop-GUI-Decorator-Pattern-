@@ -1,4 +1,4 @@
-public class Decaf {
+public class Decaf extends Beverage{
     public double getCost(){
         return 0.0;
     }

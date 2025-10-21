@@ -1,4 +1,4 @@
-public class HouseBlend {
+public class HouseBlend extends Beverage{
     public double getCost(){
         return 0.0;
     }
