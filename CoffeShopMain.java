@@ -8,5 +8,13 @@ public class CoffeShopMain {
         System.out.println("Milk object made with espresso object, display espresso's new cost and description");
         System.out.println(espressoDemo.getCost());
         System.out.println(espressoDemo.getDescription());
+        System.out.println("now add mocha to the espresso");
+        Mocha addMocha = new Mocha(espressoDemo);
+        System.out.println(espressoDemo.getCost());
+        System.out.println(espressoDemo.getDescription());
+        System.out.println("Add more milk!");
+        Milk addMoreMilk = new Milk(espressoDemo);
+        System.out.println(espressoDemo.getCost());
+        System.out.println(espressoDemo.getDescription());
     }
 }
