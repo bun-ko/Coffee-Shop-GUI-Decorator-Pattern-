@@ -1,6 +1,10 @@
+/**
+ * Soy condiment decorator - wraps a beverage and adds soy cost/description.
+ */
 public class Soy extends CondimentDecorator{
     Beverage beverage;
 
+    // Wraps the beverage and adds soy cost and description
     public Soy(Beverage beverage){
         this.beverage = beverage;
         this.beverage.cost += 1.50;

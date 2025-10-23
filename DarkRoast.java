@@ -1,3 +1,6 @@
+/**
+ * Dark Roast coffee - a concrete beverage implementation.
+ */
 public class DarkRoast extends Beverage {
     public DarkRoast(){
         this.cost = 1.50;
