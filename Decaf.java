@@ -1,3 +1,6 @@
+/**
+ * Decaf coffee - a concrete beverage implementation.
+ */
 public class Decaf extends Beverage{
     public Decaf(){
         this.cost = 1.25;

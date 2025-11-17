@@ -1,3 +1,7 @@
+/**
+ * House Blend - a concrete beverage implementation.
+ */
+
 public class HouseBlend extends Beverage{
     public HouseBlend(){
         this.cost = 1.00;

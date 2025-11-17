@@ -3,12 +3,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-//hi
+
 public class CoffeeApp extends JFrame
 {
     private static final int WIDTH = 375;
     private static final int HEIGHT = 812;
 
+    // GUI components
     private JComboBox<String> baseSelector;
     private JRadioButton smallSize, mediumSize, largeSize;
     private JCheckBox milkBox, mochaBox, soyBox, whipBox;
@@ -16,13 +17,18 @@ public class CoffeeApp extends JFrame
     private JLabel totalLabel;
     private JButton clearBtn, addToCartBtn, checkoutBtn, helpBtn;
 
+    // Shopping cart to store multiple orders
     private ArrayList<String> cart = new ArrayList<>();
     private DecimalFormat df = new DecimalFormat("$0.00");
 
+    // Track last selections
     private String lastBase = "";
     private String lastSize = "Medium";
     private boolean lastMilk, lastMocha, lastSoy, lastWhip;
 
+    /**
+     * Constructor - sets up the main window and components
+     */
     public CoffeeApp() 
     {
         super("Coffee Shop");
@@ -39,6 +45,9 @@ public class CoffeeApp extends JFrame
         setVisible(true);
     }
 
+    /**
+     * Creates the main panel with all input controls and order summary
+     */
     private JPanel createMainPanel() 
     {
         JPanel panel = new JPanel(new GridLayout(0, 1, 5, 5));
@@ -95,6 +104,9 @@ public class CoffeeApp extends JFrame
         return panel;
     }
 
+    /**
+     * Creates the bottom button panel
+     */
     private JPanel createButtonPanel() 
     {
         JPanel buttonPanel = new JPanel(new GridLayout(1, 4, 10, 10));
@@ -118,6 +130,10 @@ public class CoffeeApp extends JFrame
         return buttonPanel;
     }
 
+    /**
+     * Updates the order summary and total cost based on current selections.
+     * This is where the Decorator Pattern is applied - condiments wrap the base beverage.
+     */
     private void updateSummary() 
     {
         String base = (String) baseSelector.getSelectedItem();
@@ -128,6 +144,7 @@ public class CoffeeApp extends JFrame
             return;
         }
 
+        // Create the base beverage
         double cost = 0;
         Beverage drink;
         switch (base) 
@@ -142,11 +159,13 @@ public class CoffeeApp extends JFrame
 
         StringBuilder desc = new StringBuilder(base);
 
+        // Apply decorators (condiments) to the beverage
         if (milkBox.isSelected()) { new Milk(drink); desc.append(", milk"); }
         if (mochaBox.isSelected()) { new Mocha(drink); desc.append(", mocha"); }
         if (soyBox.isSelected()) { new Soy(drink); desc.append(", soy"); }
         if (whipBox.isSelected()) { new Whip(drink); desc.append(", whip"); }
 
+        // Calculate final price with size multiplier
         double multiplier = smallSize.isSelected() ? 1.0 : mediumSize.isSelected() ? 1.25 : 1.5;
         double subtotal = drink.getCost();
         double total = subtotal * multiplier;
@@ -168,6 +187,9 @@ public class CoffeeApp extends JFrame
         lastSize = smallSize.isSelected() ? "Small" : mediumSize.isSelected() ? "Medium" : "Large";
     }
 
+    /**
+     * Resets all selections to default
+     */
     private void clearSelections() 
     {
         baseSelector.setSelectedIndex(0);
@@ -181,6 +203,9 @@ public class CoffeeApp extends JFrame
         updateSummary();
     }
 
+    /**
+     * Adds the current order to the shopping cart
+     */
     private void addToCart() 
     {
         String base = (String) baseSelector.getSelectedItem();
@@ -193,6 +218,9 @@ public class CoffeeApp extends JFrame
         JOptionPane.showMessageDialog(this, "Added to cart!", "Cart", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    /**
+     * Displays all items in the cart and clears it
+     */
     private void checkout() 
     {
         if (cart.isEmpty()) 
@@ -206,6 +234,9 @@ public class CoffeeApp extends JFrame
         cart.clear();
     }
 
+    /**
+     * Shows help dialog explaining the Decorator Pattern
+     */
     private void showHelp() 
     {
         JOptionPane.showMessageDialog(this,

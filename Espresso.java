@@ -1,3 +1,6 @@
+/**
+ * Espress - a concrete beverage implementation.
+ */
 public class Espresso extends Beverage{
     public Espresso(){
         this.cost = 1.50;
